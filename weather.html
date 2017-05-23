@@ -26,8 +26,11 @@
     function getWeather(){
       var input = document.querySelector('#address').value;
       if(input){
-        $.ajax({url: "http://localhost:3000/", success: function(result){
-            console.log(result);
+        $.ajax({url: `https://salty-hollows-51366.herokuapp.com/?address=${input}`, success: function(result){
+            var address = result.address;
+            var temperature = result.temperature;
+            var apparentTemperature = result.apparentTemperature;
+            document.querySelector('.weather').innerHTML = `<p>Address: ${address}</p>`+ `<p>It's currently ${temperature}. It feels like ${apparentTemperature}.</p>`
         }});
       }
     }
