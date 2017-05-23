@@ -10,9 +10,11 @@ app.use(cors());
 
 const port = process.env.PORT || 3000;
 
-
-
 app.get('/', (req, res) => {
+    res.sendFile(  __dirname +'/weather.html' );
+});
+
+app.get('/weatherAPI', (req, res) => {
 
   var address = req.query.address;
 

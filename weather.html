@@ -26,7 +26,7 @@
     function getWeather(){
       var input = document.querySelector('#address').value;
       if(input){
-        $.ajax({url: `https://salty-hollows-51366.herokuapp.com/?address=${input}`, success: function(result){
+        $.ajax({url: `https://salty-hollows-51366.herokuapp.com/weatherAPI/?address=${input}`, success: function(result){
             var address = result.address;
             var temperature = result.temperature;
             var apparentTemperature = result.apparentTemperature;
